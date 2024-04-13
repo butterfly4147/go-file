@@ -29,6 +29,14 @@ function showModal(id) {
 }
 
 function closeModal(id) {
+    //pause the video
+    const videoElements = document.getElementById(id).getElementsByTagName('video');
+    if (videoElements.length > 0) {
+        videoElements[0].pause(); // 播放第一个video元素
+    } else {
+        console.log('在div内未找到video元素');
+    }
+    //convert 'is-active'
     document.getElementById(id).className = "modal";
 }
 
